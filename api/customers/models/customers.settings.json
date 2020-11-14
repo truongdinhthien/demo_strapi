@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customers",
+  "info": {
+    "name": "Customers"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Phone": {
+      "type": "string",
+      "unique": true,
+      "maxLength": 12,
+      "required": true
+    },
+    "Email": {
+      "type": "email"
+    },
+    "orders": {
+      "via": "customer",
+      "collection": "orders"
+    }
+  }
+}

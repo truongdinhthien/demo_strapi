@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "Orders",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "TotalPrice": {
+      "type": "integer"
+    },
+    "order_details": {
+      "collection": "order-details"
+    },
+    "customer": {
+      "model": "customers",
+      "via": "orders"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "orders"
+    }
+  }
+}
